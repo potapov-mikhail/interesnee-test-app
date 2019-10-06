@@ -1,0 +1,62 @@
+<ui-card>
+  <ng-template #header>
+    <h5 class="text-muted font-weight-bold">
+      <i class="fas fa-user-plus"></i>
+      Create Account
+    </h5>
+  </ng-template>
+  <ng-template #body>
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+      <ui-input
+        label="Last name"
+        type="text"
+        placeholder="Enter your last name"
+        formControlName="lastName">
+      </ui-input>
+      <ui-validation-error-message
+        [control]="form.get('lastName')">
+      </ui-validation-error-message>
+      <ui-input
+        label="First name"
+        type="text"
+        placeholder="Enter your first name"
+        formControlName="firstName">
+      </ui-input>
+      <ui-validation-error-message
+        [control]="form.get('firstName')">
+      </ui-validation-error-message>
+      <ui-input
+        label="Second name"
+        type="text"
+        placeholder="Enter your second name"
+        formControlName="secondName">
+      </ui-input>
+      <ui-validation-error-message
+        [control]="form.get('secondName')">
+      </ui-validation-error-message>
+      <ui-input
+        label="Email"
+        type="email"
+        placeholder="Enter your email"
+        formControlName="email">
+      </ui-input>
+      <ui-validation-error-message
+        [control]="form.get('email')">
+      </ui-validation-error-message>
+      <ui-input
+        label="Password"
+        type="password"
+        placeholder="Enter your password"
+        formControlName="password">
+      </ui-input>
+      <ui-validation-error-message
+        [control]="form.get('password')">
+      </ui-validation-error-message>
+      <ui-button type="submit" [pending]="isPending">Sign up</ui-button>
+      <span class="form-text text-muted">
+        Already a member?
+       <a [routerLink]="['/auth/login']" title="login in system">Sign in</a>
+    </span>
+    </form>
+  </ng-template>
+</ui-card>

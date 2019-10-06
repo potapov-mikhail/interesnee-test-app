@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-light">
+  <h4 class="navbar-brand">Interesnee Test App</h4>
+  <div class="d-flex align-items-start">
+    <div>
+      <span class="mr-2">{{ user$ | async | userFullName }}</span>
+      <i class="fas fa-user-circle fa-2x"></i>
+    </div>
+    <button
+      class="btn btn-sm btn-outline-dark ml-2"
+      title="logout"
+      (click)="handleLogout()">
+      <i class="fas fa-sign-out-alt"></i>
+    </button>
+  </div>
+</nav>
+<div class="p-5">
+  <router-outlet></router-outlet>
+</div>
+

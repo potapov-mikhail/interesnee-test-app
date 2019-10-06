@@ -1,0 +1,37 @@
+<ui-card>
+  <ng-template #header>
+    <h5 class="text-muted font-weight-bold text-center">
+      <i class="fas fa-sign-in-alt"></i>
+      Sign In
+    </h5>
+  </ng-template>
+  <ng-template #body>
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+      <ui-input
+        label="Email"
+        type="email"
+        placeholder="Enter your email"
+        formControlName="email">
+      </ui-input>
+      <ui-validation-error-message
+        [control]="form.get('email')">
+      </ui-validation-error-message>
+      <ui-input
+        label="Password"
+        type="password"
+        placeholder="Enter your password"
+        formControlName="password">
+      </ui-input>
+      <ui-validation-error-message
+        [control]="form.get('password')">
+      </ui-validation-error-message>
+      <div class="d-flex justify-content-center">
+        <ui-button type="submit" [pending]="pending">Sign in</ui-button>
+      </div>
+    </form>
+    <span class="form-text text-muted text-center mt-3">
+      Don`t have an account?
+     <a [routerLink]="['/auth/registration']" title="Create new account">Sign up</a>
+    </span>
+  </ng-template>
+</ui-card>

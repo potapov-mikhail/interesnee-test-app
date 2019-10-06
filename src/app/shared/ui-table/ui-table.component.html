@@ -1,0 +1,17 @@
+<table class="table table-hover table-xs">
+  <thead class="non-top">
+  <ng-container *ngTemplateOutlet="th"></ng-container>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let item of data; index as idx">
+    <ng-container
+      *ngTemplateOutlet="tr; context: { item: item, index: idx }"
+    ></ng-container>
+  </ng-container>
+  <tr *ngIf="!data?.length">
+    <td colspan="100">
+      Ничего не найдено
+    </td>
+  </tr>
+  </tbody>
+</table>

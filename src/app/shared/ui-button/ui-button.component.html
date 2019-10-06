@@ -1,0 +1,11 @@
+<button
+  [disabled]="pending"
+  [className]="btnClassName"
+  [type]="type">
+  <ng-container *ngIf="pending; else content">
+    <div class="spinner-border spinner-border-sm"></div> Pending...
+  </ng-container>
+  <ng-template #content>
+    <ng-content></ng-content>
+  </ng-template>
+</button>

@@ -1,0 +1,26 @@
+<ui-card *ngIf="user">
+  <ng-template #header>
+    <h5>Selected User</h5>
+  </ng-template>
+  <ng-template #body>
+    <div class="row">
+      <div class="col-auto">
+        <i class="fas fa-user-circle fa-7x"></i>
+      </div>
+      <div class="col">
+        <span class="field-name">
+          Last name: {{ user.lastName }}
+        </span>
+        <span class="field-name">
+          First name: {{ user.firstName }}
+        </span>
+        <span class="field-name">
+          Second name: {{ user.secondName }}
+        </span>
+        <span class="field-name">
+          email: {{ user.email }}
+        </span>
+      </div>
+    </div>
+  </ng-template>
+</ui-card>
